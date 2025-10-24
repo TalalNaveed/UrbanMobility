@@ -226,3 +226,4 @@ Below is the exact summary generated from the notebook (N=6,056). In this run, q
 
 ---
 
+<img width="1189" height="490" alt="image" src="https://github.com/user-attachments/assets/addf21ba-6bd9-4ef8-94b7-fdeef3a66a5a" />
