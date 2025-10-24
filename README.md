@@ -289,5 +289,3 @@ Below is the exact summary generated from the notebook (N=6,056). In this run, q
 
 ---
 
-**End of README.**
-
