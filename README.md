@@ -1,5 +1,5 @@
 
-# Bike Availability vs. Weather: Exploratory Data Analysis (EDA)
+# Urban Mobility: Exploratory Data Analysis (EDA)
 
 **Course Midterm – Exploratory Data Analysis Project**  
 **Author:** Saad Iftikhar, Talal Naveed, Ahmed Arkam Mohamed Faisaar
