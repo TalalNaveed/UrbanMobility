@@ -212,7 +212,7 @@ Below is the exact summary generated from the notebook (N=6,056). In this run, q
 
 ---
 
-## 11) Rubric Alignment (Self‑Checklist)
+## 11) Rubric Alignment
 
 - **Comprehensive Python use (30%)**  
   - Data ingestion from public endpoints, robust request sessions with retries.  
@@ -237,7 +237,7 @@ Below is the exact summary generated from the notebook (N=6,056). In this run, q
 
 ---
 
-## 12) How to Cite / Reference
+## 12) How to Cite
 
 - Citi Bike System Data.  
 - National Weather/Public Weather APIs.  
