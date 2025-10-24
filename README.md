@@ -87,7 +87,7 @@ The analysis proceeds in four layers:
 
 ---
 
-## 5) Core Results (from the Quadratic Weather Spec)
+## 5) Core Results
 
 Below is the exact summary generated from the notebook (N=6,056). In this run, quadratic temperature was included in the formula, but only the linear temperature coefficient appears in the printed coefficient table. The precipitation and weekend indicators show zeros due to modeling diagnostics discussed below.
 
@@ -188,7 +188,7 @@ Below is the exact summary generated from the notebook (N=6,056). In this run, q
 
 ---
 
-## 8) Discussion & Interpretation (“So What?”)
+## 8) Discussion & Interpretation
 
 - **Operational planning:** Even modest relationships with temperature and wind can inform **rebalancing** (anticipating surges/dips) and dynamic pricing/incentives.  
 - **UX & safety:** If wind/precip meaningfully reduce usage in larger samples, operators can surface proactive guidance (route alternatives, helmets, rain covers, speed limiting during gusts).  
