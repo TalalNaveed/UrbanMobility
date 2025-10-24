@@ -2,8 +2,7 @@
 # Bike Availability vs. Weather: Exploratory Data Analysis (EDA)
 
 **Course Midterm – Exploratory Data Analysis Project**  
-**Author:** Saad Iftikhar  
-**Repository:** _This README accompanies the notebook(s) and scripts in this repo._
+**Author:** Saad Iftikhar, Talal Naveed, Ahmed Arkam Mohamed Faisaar
 
 ---
 
@@ -267,4 +266,3 @@ Below is the exact summary generated from the notebook (N=6,056). In this run, q
 
 ---
 
-**End of README.**
