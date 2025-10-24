@@ -226,4 +226,8 @@ Below is the exact summary generated from the notebook (N=6,056). In this run, q
 
 ---
 
+
+<img width="1172" height="960" alt="image" src="https://github.com/user-attachments/assets/646f9055-d18c-4867-97e0-016c152704c6" />
+<img width="1590" height="1189" alt="image" src="https://github.com/user-attachments/assets/6b678411-a2af-4f65-b9ae-56a7385f8c32" />
+<img width="690" height="590" alt="image" src="https://github.com/user-attachments/assets/98e5424b-2506-4a4f-aee4-beef786b4afd" />
 <img width="1189" height="490" alt="image" src="https://github.com/user-attachments/assets/addf21ba-6bd9-4ef8-94b7-fdeef3a66a5a" />
