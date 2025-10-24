@@ -1,10 +1,9 @@
-# Urban Mobility
-
 
 # Bike Availability vs. Weather: Exploratory Data Analysis (EDA)
 
 **Course Midterm – Exploratory Data Analysis Project**  
-**Author:** Saad Iftikhar, Talal Naveed, Ahmed Arkam Mohamed Faisaar
+**Author:** Saad Iftikhar  
+**Repository:** _This README accompanies the notebook(s) and scripts in this repo._
 
 ---
 
@@ -20,28 +19,6 @@ This project investigates how short‑horizon weather conditions relate to Citi 
 - **Model fit is modest (R²≈0.051):** Weather and simple timing variables alone provide limited explanatory power for station‑level utilization; station capacity, neighborhood effects, seasonality, and network dynamics likely play substantial roles.
 
 While the overall model is intentionally simple (to emphasize EDA goals and interpretability), the workflow is reproducible, well‑documented, and designed so that additional features (e.g., station fixed effects, seasonal dummies, lagged weather, interaction terms) can be layered in future iterations.
-
-- **Citi Bike station snapshots / usage** (hourly station-level metrics).  
-- **Weather observations** matched to each hour and location (temperature in °C, windspeed, precipitation indicator).  
-- **Temporal features** derived from timestamps (hour of day, weekend flag).  
-- **City-level context data** collected via **three open, non-auth APIs** providing geographic and infrastructure metrics for global comparability.
-
----
-
-### APIs Used (3 Total)
-
-| **API** | **Purpose** | **Output Type** |
-|----------|--------------|-----------------|
-| **Open-Meteo Geocoding API** | Provides city coordinates, elevation, and population metadata. | JSON |
-| **Wikidata SPARQL API** | Retrieves administrative area boundaries, land area, and OpenStreetMap relation IDs. | JSON |
-| **OpenStreetMap Overpass API** | Aggregates spatial queries for total bike-lane length and metro line counts within each city’s OSM boundary. | JSON |
-
-**API Practices:**  
-- All APIs are **public and non-authenticated**.  
-- Queries follow **fair-use guidelines**: ≤ 1 request / sec, with built-in timeouts and automatic retries.  
-- Responses are parsed, validated, and cached locally for reproducibility.  
-- Each endpoint returns lightweight JSON responses integrated into the analysis pipeline.
-
 
 ---
 
@@ -105,15 +82,22 @@ Below is the exact summary generated from the notebook (N=6,056). In this run, q
 > **N = 6,056 | R² = 0.051 (Adj. 0.051) | AIC = 58,591**  
 > **Overall F-test:** F = 2.50, p = 0.174
 
-| Variable    |   Coef.  |  Std. Err. |  P>\|z\|  |  [0.025  |  0.975]  | Sig |
-|:-------------|---------:|-----------:|----------:|----------:|----------:|:----:|
-| **const**       | 101.7610 |   28.7093 | 0.00039 |  45.4917 | 158.0300 | *** |
-| **temp_c**      |  -2.7822 |    1.1133 | 0.01246 |  -4.9643 |  -0.6001 | *   |
-| **windspeed**   |  -2.2629 |    1.3708 | 0.09879 |  -4.9496 |   0.4239 | •   |
-| **hour**        |  -0.0291 |    0.3022 | 0.92338 |  -0.6213 |   0.5632 |     |
-| **is_weekend**  |   0.0000 |    0.0000 |     nan |   0.0000 |   0.0000 |     |
-| **precip_gt0**  |   0.0000 |    0.0000 |     nan |   0.0000 |   0.0000 |     |
+| Variable   | Coef.    | Std.Err. | P>|z|  | [0.025 | 0.975] | Sig |
+|:-----------|---------:|---------:|-----:|--------:|--------:|:----|
+| const      | 101.7610 | 28.7093  | 0.00039 | 45.4917 | 158.0300 | *** |
+| temp_c     |  -2.7822 |  1.1133  | 0.01246 | -4.9643 |  -0.6001 | *   |
+| windspeed  |  -2.2629 |  1.3708  | 0.09879 | -4.9496 |   0.4239 | •   |
+| hour       |  -0.0291 |  0.3022  | 0.92338 | -0.6213 |   0.5632 |     |
+| is_weekend |   0.0000 |  0.0000  |   nan   |  0.0000 |   0.0000 |     |
+| precip_gt0 |   0.0000 |  0.0000  |   nan   |  0.0000 |   0.0000 |     |
 
+|:------------|---------:|----------:|--------:|---------:|----------:|:----|
+| const       | 101.7610 |   28.7093 | 0.00039 |  45.4917 |  158.0300 | *** |
+| temp_c      |  -2.7822 |    1.1133 | 0.01246 |  -4.9643 |   -0.6001 | *   |
+| windspeed   |  -2.2629 |    1.3708 | 0.09879 |  -4.9496 |    0.4239 | •   |
+| hour        |  -0.0291 |    0.3022 | 0.92338 |  -0.6213 |    0.5632 |     |
+| is_weekend  |   0.0000 |    0.0000 |     nan |   0.0000 |    0.0000 |     |
+| precip_gt0  |   0.0000 |    0.0000 |     nan |   0.0000 |    0.0000 |     |
 
 **Plain‑English interpretations:**  
 - **Temperature (°C):** Each +1 °C is associated with a **−2.78 percentage‑point** change in utilization rate (95% CI −4.96 to −0.60; **significant**, _p_=0.012).  
@@ -266,22 +250,10 @@ Below is the exact summary generated from the notebook (N=6,056). In this run, q
 
 ---
 
-## Appendix A: Reproducible Result Block (as printed)
+## Appendix A: Reproducible Result Block
 
 **Results Summary & Interpretation – Quadratic Weather Spec**  
-- N = 6,056 | R² = 0.051 (Adj. 0.051) | AIC = 58,591  
-- Overall F-test: F = 2.50, p = 0.174
-
-| Variable       |  Coef.   | Std. Err. |  P&gt;|z|  | [0.025] | [0.975] | Sig |
-|----------------|----------:|-----------:|---------:|----------:|----------:|:----:|
-| **const**       | 101.7610  | 28.7093  | 0.00039 | 45.4917 | 158.0300 | *** |
-| **temp_c**      |  -2.7822  |  1.1133  | 0.01246 | -4.9643 |  -0.6001 | *   |
-| **windspeed**   |  -2.2629  |  1.3708  | 0.09879 | -4.9496 |   0.4239 | •   |
-| **hour**        |  -0.0291  |  0.3022  | 0.92338 | -0.6213 |   0.5632 |     |
-| **is_weekend**  |   0.0000  |  0.0000  |   nan   |  0.0000 |   0.0000 |     |
-| **precip_gt0**  |   0.0000  |  0.0000  |   nan   |  0.0000 |   0.0000 |     |
-
-**Interpretations:**  
+**Interpretations:****  
 - **Temperature:** +1 °C → **−2.78 pp** (CI −4.96, −0.60), significant.  
 - **Windspeed:** +1 unit → **−2.26 pp** (CI −4.95, +0.42), not significant.  
 - **Hour:** Essentially zero; not significant.  
@@ -289,3 +261,4 @@ Below is the exact summary generated from the notebook (N=6,056). In this run, q
 
 ---
 
+**End of README.**
