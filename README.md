@@ -21,6 +21,28 @@ This project investigates how short‑horizon weather conditions relate to Citi 
 
 While the overall model is intentionally simple (to emphasize EDA goals and interpretability), the workflow is reproducible, well‑documented, and designed so that additional features (e.g., station fixed effects, seasonal dummies, lagged weather, interaction terms) can be layered in future iterations.
 
+- **Citi Bike station snapshots / usage** (hourly station-level metrics).  
+- **Weather observations** matched to each hour and location (temperature in °C, windspeed, precipitation indicator).  
+- **Temporal features** derived from timestamps (hour of day, weekend flag).  
+- **City-level context data** collected via **three open, non-auth APIs** providing geographic and infrastructure metrics for global comparability.
+
+---
+
+### APIs Used (3 Total)
+
+| **API** | **Purpose** | **Output Type** |
+|----------|--------------|-----------------|
+| **Open-Meteo Geocoding API** | Provides city coordinates, elevation, and population metadata. | JSON |
+| **Wikidata SPARQL API** | Retrieves administrative area boundaries, land area, and OpenStreetMap relation IDs. | JSON |
+| **OpenStreetMap Overpass API** | Aggregates spatial queries for total bike-lane length and metro line counts within each city’s OSM boundary. | JSON |
+
+**API Practices:**  
+- All APIs are **public and non-authenticated**.  
+- Queries follow **fair-use guidelines**: ≤ 1 request / sec, with built-in timeouts and automatic retries.  
+- Responses are parsed, validated, and cached locally for reproducibility.  
+- Each endpoint returns lightweight JSON responses integrated into the analysis pipeline.
+
+
 ---
 
 ## 2) Research Question
