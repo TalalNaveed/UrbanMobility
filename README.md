@@ -213,32 +213,8 @@ Below is the exact summary generated from the notebook (N=6,056). In this run, q
 
 ---
 
-## 11) Rubric Alignment
 
-- **Comprehensive Python use (30%)**  
-  - Data ingestion from public endpoints, robust request sessions with retries.  
-  - Cleaning/feature engineering in `pandas`.  
-  - Visualizations with labeled axes, clear legends, and titles.  
-  - `statsmodels` for OLS with HC1 covariance; automated Markdown summarizer for reproducibility.  
-
-- **Depth of Analysis (30%)**  
-  - Multiple complementary visuals; linear and quadratic functional forms.  
-  - Discussion of non‑linear temperature effects and potential interactions.  
-  - Clear roadmap for extending to fixed effects, seasonality, and heterogeneity.  
-
-- **Interpretation of Results (30%)**  
-  - Plain‑language coefficient interpretations with 95% CIs and significance.  
-  - “So what?” implications for operations, policy, and UX.  
-  - Limitations + diagnostic notes (collinearity, R² context).  
-
-- **Readability/Reproducibility (10%)**  
-  - Step‑by‑step notebook with comments and consistent variable naming.  
-  - Helper function to auto‑generate summaries; deterministic seeds where relevant.  
-  - Figures adhere to labeling standards; code blocks show exact run instructions.
-
----
-
-## 12) How to Cite
+## 11) How to Cite
 
 - Citi Bike System Data.  
 - National Weather/Public Weather APIs.  
@@ -247,7 +223,7 @@ Below is the exact summary generated from the notebook (N=6,056). In this run, q
 
 ---
 
-## 13) Next Iteration Roadmap
+## 12) Next Iteration Roadmap
 
 - Add **station and month fixed effects**; include holiday/event controls.  
 - Fit **spline/GAM** models for temperature and wind; compute turning points robustly.  
