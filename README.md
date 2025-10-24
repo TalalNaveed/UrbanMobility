@@ -211,24 +211,7 @@ Below is the exact summary generated from the notebook (N=6,056). In this run, q
 - All data are **public** and aggregated at station/time levels—no personally identifiable information.  
 - The analysis aims to improve service reliability and safety, not to penalize riders or neighborhoods.
 
----
 
-
-## 11) How to Cite
-
-- Citi Bike System Data.  
-- National Weather/Public Weather APIs.  
-- Seaborn/Matplotlib/Plotly (visualization), Statsmodels (econometrics), Pandas/Numpy (data wrangling).  
-- Please see the `REFERENCES.md` (or the final notebook appendix) for exact URLs and versions used.
-
----
-
-## 12) Next Iteration Roadmap
-
-- Add **station and month fixed effects**; include holiday/event controls.  
-- Fit **spline/GAM** models for temperature and wind; compute turning points robustly.  
-- Explore **heterogeneous effects** (downtown vs. residential, capacity tiers).  
-- Evaluate **out‑of‑sample** predictive performance (time‑based CV).
 
 ---
 
